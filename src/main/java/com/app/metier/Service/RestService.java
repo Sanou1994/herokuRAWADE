@@ -540,7 +540,7 @@ public class RestService  implements IService {
     	Transaction user =
     			transactionRepository
                         .findById(userId);
-		SoldeDebuterJournee solde =soldeDebuterJourneeRepository.findByIdUAndDateAndStatus(userId,formater.format(aujourdhui) ,1).get(0);
+    	SoldeDebuterJournee solde =soldeDebuterJourneeRepository.findByIdUAndDateAndStatus(user.getIdU(),formater.format(aujourdhui) ,1).get(0);
     	if(user.getSens().equals("decaissement")) {
             switch (user.getOperateur()) {
              case "Sortie":
