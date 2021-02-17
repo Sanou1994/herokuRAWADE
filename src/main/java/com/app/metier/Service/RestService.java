@@ -326,7 +326,7 @@ public class RestService  implements IService {
     	Transaction admin =
     			transactionRepository
                         .findById(userId);
-    	SoldeDebuterJournee soldes =soldeDebuterJourneeRepository.findByIdUAndDateAndStatus(userId,formater.format(aujourdhui) ,1).get(0);
+    	SoldeDebuterJournee soldes =soldeDebuterJourneeRepository.findByIdUAndDateAndStatus(admin.getIdU(),formater.format(aujourdhui) ,1).get(0);
     	double dec = admin.getMontant()-admin.getCommission()-ad.getMontant()+ad.getCommission();
         if(ad.getSens().equals("encaissement")) {
     		
