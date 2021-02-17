@@ -196,7 +196,12 @@ public class RestService  implements IService {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
-    
+    public Map<String, Boolean> deleteMaJournee(int userId)  {
+    	maJourneeRepository.deleteById(userId);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return response;
+    }
     public List<Transaction>getAllTransactions() {
         return transactionRepository.findAll();
     }

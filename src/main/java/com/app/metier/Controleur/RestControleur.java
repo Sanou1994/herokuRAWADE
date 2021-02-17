@@ -91,7 +91,11 @@ public class RestControleur {
     public List<Majournee> getMJourneesById(@PathVariable(value = "id") int userId) {
         return service.getMajourneesById(userId);
     }
-    
+    @DeleteMapping("/maJournee/supprimer/{id}")
+    public Map<String, Boolean> deleteMaJournee(@PathVariable(value = "id") int userId) {
+    	
+        return service.deleteMaJournee(userId);
+    }
     @PostMapping("/soldeDebuterJournees/ajouter")
     public SoldeDebuterJournee createSoldeDebuterJournee( @RequestBody SoldeDebuterJournee user) {
         return service.createSoldeDebuterJournee(user);
